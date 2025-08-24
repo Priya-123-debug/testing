@@ -17,6 +17,11 @@ const userSchema=new mongoose.Schema({
 		type:String,
 		required:true,
 	 },
+	 role: {
+    type: String,
+    enum: ["user", "recruiter", "admin"], // allowed values
+    default: "user"
+  },
 	 profile:{
 		bio:{
 			type:String,
@@ -33,4 +38,4 @@ const userSchema=new mongoose.Schema({
 		}
 	 },},
 	 {timestamps:true});
-	 export const User=mongoose.model('user',userSchema);
+	 export const User=mongoose.model('User',userSchema);

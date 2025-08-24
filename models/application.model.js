@@ -1,8 +1,11 @@
 import mongoose from "mongoose";
+import { User } from "../models/user.model.js";
+import {Job} from "../models/job.model.js";
+
 const applicationSchema=new mongoose.Schema({
 	job:{
 		type:mongoose.Schema.Types.ObjectId,
-		ref:'job',
+		ref:'Job',
 		required:true
 	},
 	applicant:{
@@ -16,4 +19,4 @@ const applicationSchema=new mongoose.Schema({
 		default:'pending'
 	}
 },{timestamps:true});
-export const application=mongoose.model('Application',applicationSchema);
+export const Application=mongoose.model('Application',applicationSchema);
